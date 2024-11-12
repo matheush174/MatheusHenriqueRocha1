@@ -1,0 +1,137 @@
+/* AppClaro.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e4e4e4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: white;
+}
+
+button[type="button"] {
+    background-color: #007bff;
+}
+
+button:hover {
+    opacity: 0.9;
+    transition: 0.5s ease-in-out;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex; /* Adiciona flexbox */
+    justify-content: space-between; /* Espaço entre os filhos */
+    align-items: center; /* Alinha conteúdo verticalmente */
+}
+
+/* App.css - Adicionando dark-mode */
+.dark-mode {
+    background-color: #333; /* Fundo escuro */
+    color: #f4f4f4; /* Texto claro */
+}
+
+.dark-mode h1 {
+    color: #f4f4f4; /* Título claro no tema escuro */
+}
+
+.dark-mode form {
+    background: #444; /* Formulário escuro */
+}
+
+.dark-mode input[type="text"] {
+    background: #555; /* Fundo escuro nos inputs */
+    color: #fff; /* Texto claro nos inputs */
+    border: 1px solid #666; /* Borda mais escura nos inputs */
+}
+
+.dark-mode li{
+    background-color: #444;
+    color: #fff;
+}
+
+.temaApp {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.dark-mode .temaApp{
+    background-color: #fff;
+    color: #333;
+    transition: 0.5s ease-in-out;
+}
+
+.dark-mode button[type="submit"],
+.dark-mode button[type="button"] {
+    background-color:#007bff; /* Cor padrão para botões no tema escuro */
+}
+
+/* Estilo para o botão de remoção */
+.btn-remover {
+    background-color: red; /* Cor de fundo vermelha */
+    color: white; /* Cor do texto branca */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    padding: 10px 10px; /* Espaçamento interno */
+    cursor: pointer; /* Mão do mouse quando em cima */
+    display: flex; /* Flex para alinhar o ícone e o texto */
+    align-items: center; /* Alinhamento vertical centrado */
+}
+
+.btn-remover i {
+    margin-right: 5px; /* Espaço após o ícone */
+}
+
+.btn-remover:hover {
+    opacity: 0.8; /* Efeito hover */
+    transition: 0.5s ease-in-out;
+}

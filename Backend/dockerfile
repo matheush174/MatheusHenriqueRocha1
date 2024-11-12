@@ -1,0 +1,20 @@
+# Usar a imagem oficial do Node.js
+FROM node:16
+
+# Definir o diretório de trabalho no contêiner
+WORKDIR /usr/src/app
+
+# Copiar o arquivo package.json e package-lock.json para o contêiner
+COPY package*.json ./
+
+# Instalar as dependências do Node.js
+RUN npm install
+
+# Copiar todo o restante do código do backend para o contêiner
+COPY . .
+
+# Expor a porta que o servidor vai rodar
+EXPOSE 3001
+
+# Rodar o servidor Node.js
+CMD ["node", "server.js"]

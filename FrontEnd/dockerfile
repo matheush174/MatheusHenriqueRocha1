@@ -1,0 +1,29 @@
+# Usar a imagem oficial do Node.js para a construção do frontend
+FROM node:16 as build
+
+# Definir o diretório de trabalho dentro do contêiner
+WORKDIR /app
+
+# Copiar o package.json e package-lock.json (ou yarn.lock, se usar o Yarn)
+COPY package*.json ./
+
+# Instalar as dependências do projeto
+RUN npm install
+
+# Copiar todo o código do frontend para o contêiner
+COPY . .
+
+# Construir a aplicação React para produção
+RUN npm run build
+
+# Usar a imagem do Nginx para servir os arquivos estáticos
+FROM nginx:alpine
+
+# Copiar os arquivos da build para o diretório do Nginx
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Expor a porta 80 para o tráfego HTTP
+EXPOSE 80
+
+# Rodar o Nginx para servir a aplicação React
+CMD ["nginx", "-g", "daemon off;"]
